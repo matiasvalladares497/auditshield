@@ -1,0 +1,25 @@
+# Python & Virtualenv
+backend/venv/
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+*.pyc
+*.db
+*.sqlite3
+backend/.env
+
+# Node & Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Logs & Temp
+*.log
+reports/assets/*
+reports/templates/*
+.DS_Store
+Thumbs.db

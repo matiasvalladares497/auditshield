@@ -1,0 +1,48 @@
+# AuditShield - Dependencias de Desarrollo Local (sin Docker)
+# Instalación: pip install -r requirements-dev.txt
+
+# Core API
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# Base de datos (SQLite para dev, PostgreSQL para prod)
+sqlalchemy==2.0.30
+aiosqlite==0.20.0
+alembic==1.13.1
+
+# Validación
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# Autenticación
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
+
+# Celery/Redis (opcionales en dev — modo directo)
+celery==5.4.0
+redis==5.0.4
+
+# WebSockets
+websockets==12.0
+
+# Utils
+python-dotenv==1.0.1
+python-dateutil==2.9.0
+
+# ---- Herramientas de Escaneo (Reales) ----
+dnspython==2.6.1
+cryptography==42.0.7
+pyOpenSSL==24.1.0
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==5.2.1
+httpx==0.27.0
+
+# Generación de reportes (matplotlib para gráficos)
+jinja2==3.1.4
+Pillow==10.3.0
+matplotlib==3.9.0
+
+# Nota: python-nmap, shodan, whois, weasyprint se usan en producción (Docker)
+# En Windows local, nmap debe estar instalado separadamente si se usa el scanner de puertos
