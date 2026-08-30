@@ -1,11 +1,11 @@
 services:
-  # 1. Backend Web Service (FastAPI API REST) - Plan Gratis
+  # 1. Backend Web Service (FastAPI API REST en Docker) - Plan Gratis
   - type: web
     name: auditshield-backend
-    env: python
+    env: docker
     plan: free
-    buildCommand: cd backend && pip install -r requirements.txt
-    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -31,7 +31,7 @@ services:
           property: host
 
 databases:
-  # Base de Datos PostgreSQL Administrada - Plan Gratis
+  # Base de Datos PostgreSQL Administrada - Plan Gratis (Éxito)
   - name: auditshield-db
     databaseName: auditshield
     user: auditshield
