@@ -29,7 +29,6 @@ shodan==1.31.0
 
 # Report generation & Utils
 jinja2==3.1.4
-Pillow==10.3.0
 matplotlib==3.9.0
 python-dateutil==2.9.0
 pycountry==23.12.11
