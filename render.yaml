@@ -1,10 +1,10 @@
 services:
-  # 1. Backend Web Service (FastAPI API REST) - Plan Gratis
+  # 1. Backend Web Service (FastAPI) - Plan Gratis
   - type: web
     name: auditshield-backend
     env: python
     plan: free
-    buildCommand: cd backend && pip install -r requirements.txt
+    buildCommand: cd backend && pip install --upgrade pip && pip install -r requirements.txt
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATABASE_URL
@@ -16,7 +16,7 @@ services:
       - key: ENVIRONMENT
         value: production
 
-  # 2. Frontend Web Service (Next.js Interface) - Plan Gratis
+  # 2. Frontend Web Service (Next.js) - Plan Gratis
   - type: web
     name: auditshield-frontend
     env: node
@@ -31,7 +31,7 @@ services:
           property: host
 
 databases:
-  # Base de Datos PostgreSQL Administrada - Plan Gratis
+  # PostgreSQL Administrada - Plan Gratis
   - name: auditshield-db
     databaseName: auditshield
     user: auditshield
