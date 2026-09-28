@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-# Install only the system dependencies actually needed
+# Dependencias del sistema necesarias
 RUN apt-get update && apt-get install -y \
     nmap \
     curl \
@@ -21,6 +21,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY . .
 
+RUN chmod +x start.sh
+
 EXPOSE 8000
 
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["./start.sh"]
